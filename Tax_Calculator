@@ -1,0 +1,15 @@
+import streamlit as st
+
+st.title('Tax Calculator')
+
+# Text to explain the functionality
+st.text('Hello! This is a calculator that helps you find your tax.')
+
+# Inputs
+income = st.number_input('Enter Your Income😎', min_value=0)
+tax_rate = st.number_input('Enter Your Tax Rate (as a percentage)😊', min_value=0.0, max_value=100.0)
+
+# Calculate button
+if st.button('Calculate'):
+    tax_amount = income * (tax_rate / 100)
+    st.write(f'The calculated tax is: ₹{tax_amount:.2f}')
